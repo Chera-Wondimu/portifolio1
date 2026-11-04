@@ -1,4 +1,3 @@
-
 /* =========================================
    CHERA WONDIMU — PORTFOLIO
    Main JavaScript
@@ -51,15 +50,35 @@ document.addEventListener("DOMContentLoaded", () => {
         if (event.key === "Escape") closeMenu();
     });
 
-    // 2. Header and Back to Top
+    // 2. Header, Back to Top, and Theme Toggle
     const header = document.getElementById("header");
     const backToTop = document.getElementById("backToTop");
+    const themeBtn = document.getElementById("theme-btn");
+
+    if (themeBtn) {
+        themeBtn.addEventListener("click", () => {
+            const currentTheme = document.documentElement.getAttribute("data-theme") || "light";
+            const newTheme = currentTheme === "dark" ? "light" : "dark";
+            
+            document.documentElement.setAttribute("data-theme", newTheme);
+            try {
+                localStorage.setItem("theme", newTheme);
+            } catch (e) {}
+        });
+    }
+
+    if (backToTop) {
+        backToTop.addEventListener("click", (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    }
 
     // 3. Active Navigation
     const sections = document.querySelectorAll("main section[id]");
 
     function updateActiveNavigation() {
-        let currentSection = "home";
+        let currentSection = "hero";
 
         sections.forEach((section) => {
             if (section.getBoundingClientRect().top <= 160) {
@@ -318,7 +337,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         try {
-            // Fetch profile and submissions
             const [profileData, submissionsData] = await Promise.all([
                 fetchJSON(userEndpoint),
                 fetchJSON(submissionsEndpoint)
@@ -341,7 +359,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const user = profileData.result[0];
 
-            // Count unique problems with an accepted submission
             const solvedProblems = new Set();
 
             submissionsData.result.forEach((submission) => {
