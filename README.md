@@ -3,7 +3,24 @@
 
 A personal developer portfolio showcasing my background, technical skills, projects, and competitive programming journey.
 
-🌐 **Live Portfolio:** Add your Vercel URL after deployment.
+<p align="center">
+  <a href="https://portifolio1-six-plum.vercel.app/">
+    <img src="https://img.shields.io/badge/Live%20Portfolio-Visit%20Website-00D4FF?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Portfolio"/>
+  </a>
+</p>
+
+<p align="center">
+  🌐 <strong>Live Website:</strong>
+  <a href="https://portifolio1-six-plum.vercel.app/">Visit My Portfolio</a>
+</p>
+
+## 🌐 Live Deployment
+
+My portfolio is deployed on Vercel.
+
+- **Live Portfolio:** https://portifolio1-six-plum.vercel.app/
+- **Deployment Platform:** Vercel
+- **Repository:** https://github.com/Chera-Wondimu/portifolio1
 
 ## About
 
@@ -115,4 +132,4 @@ Every successful push to the connected GitHub branch can trigger a new deploymen
 
 **Built with passion by Chera Wondimu.**
 
-“Finish what you start. Build what you learn. Showcase what you build. Learn from your mistakes. Repeat
+“Finish what you start. Build what you learn. Showcase what you build. Learn from your mistakes. Repeat.”
