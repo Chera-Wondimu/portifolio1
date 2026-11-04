@@ -1,1 +1,5 @@
-﻿<svg xmlns="http://www.w3.org/2000/svg" width="150" height="38"><rect width="150" height="38" rx="8" fill="#174b78"/><text x="75" y="25" text-anchor="middle" fill="#fff" font-family="Arial" font-size="14" font-weight="bold">LINKEDIN ↗</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="210" height="52" viewBox="0 0 210 52">
+<rect x="1" y="1" width="208" height="50" rx="12" fill="#151b30" stroke="#7dd3fc" stroke-opacity=".8"/>
+<circle cx="23" cy="26" r="5" fill="#7dd3fc"/>
+<text x="111" y="32" fill="#f0edff" font-family="Consolas,monospace" font-size="15" font-weight="700" text-anchor="middle">LINKEDIN</text>
+</svg>

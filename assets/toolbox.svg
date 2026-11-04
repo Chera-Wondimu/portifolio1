@@ -1,1 +1,15 @@
-﻿<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="190"><rect width="1000" height="190" rx="16" fill="#111c2a" stroke="#263b52"/><g font-family="Arial" font-size="16" fill="#e7eef6"><text x="28" y="42" fill="#55d6be" font-weight="bold">LANGUAGES</text><text x="28" y="70">Python · C++ · Java · JavaScript · HTML · CSS</text><text x="28" y="112" fill="#55d6be" font-weight="bold">FRAMEWORKS &amp; DATABASES</text><text x="28" y="140">Node.js · Express · React · MySQL · PostgreSQL · SQL</text><text x="540" y="42" fill="#55d6be" font-weight="bold">TOOLS &amp; DATA</text><text x="540" y="70">Git · GitHub · Docker · VS Code</text><text x="540" y="112">NumPy · Pandas · Matplotlib · Jupyter</text></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="290" viewBox="0 0 1100 290">
+<rect x="1" y="1" width="1098" height="288" rx="18" fill="#101629" stroke="#8b7bce" stroke-opacity=".5"/>
+<g font-family="Consolas,monospace">
+<text x="32" y="42" fill="#70e1c1" font-size="17">$ ls ./toolbox</text>
+<text x="32" y="88" fill="#8ed8ff" font-size="16">LANGUAGES</text>
+<text x="250" y="88" fill="#e8e6ff" font-size="18">Python · C++ · Java · JavaScript · HTML · CSS</text>
+<text x="32" y="133" fill="#c4a7ff" font-size="16">BACKEND / UI</text>
+<text x="250" y="133" fill="#e8e6ff" font-size="18">Node.js · Express · React</text>
+<text x="32" y="178" fill="#f0abfc" font-size="16">DATABASES</text>
+<text x="250" y="178" fill="#e8e6ff" font-size="18">PostgreSQL · MySQL · SQL</text>
+<text x="32" y="223" fill="#70e1c1" font-size="16">DATA / TOOLS</text>
+<text x="250" y="223" fill="#e8e6ff" font-size="18">NumPy · Pandas · Matplotlib · Git · GitHub · Docker · VS Code</text>
+<text x="32" y="265" fill="#8984aa" font-size="13">Always learning, practicing, and expanding the toolbox.</text>
+</g>
+</svg>
