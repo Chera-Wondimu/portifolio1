@@ -154,28 +154,60 @@ A collection of algorithmic problem-solving exercises and solutions, primarily u
 
 ---
 
-<!-- GITHUB STATISTICS -->
+<!-- =========================================
+     GITHUB ACTIVITY & STATISTICS
+========================================== -->
+
 <p align="center">
   <img src="./assets/h-stats.svg" width="100%" alt="GitHub Activity and Statistics"/>
 </p>
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Chera-Wondimu&show_icons=true&theme=tokyonight&hide_border=true" height="165" alt="GitHub Statistics"/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Chera-Wondimu&layout=compact&theme=tokyonight&hide_border=true" height="165" alt="Most Used Programming Languages"/>
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=17&pause=1500&color=70E1C1&center=true&vCenter=true&width=550&lines=My+GitHub+Activity;Consistency+over+perfection;Every+commit+is+progress" alt="Animated GitHub activity heading"/>
 </p>
 
+<!-- GITHUB OVERVIEW -->
 <p align="center">
-  <img src="https://streak-stats.demolab.com?user=Chera-Wondimu&theme=tokyonight&hide_border=true" width="75%" alt="GitHub Contribution Streak"/>
+  <img
+    src="https://github-readme-stats.vercel.app/api?username=Chera-Wondimu&show_icons=true&include_all_commits=true&count_private=true&theme=tokyonight&hide_border=true&rank_icon=github"
+    height="180"
+    alt="GitHub profile statistics"
+  />
 </p>
 
----
+<!-- MOST USED PROGRAMMING LANGUAGES -->
+<p align="center">
+  <img
+    src="https://github-readme-stats.vercel.app/api/top-langs/?username=Chera-Wondimu&layout=compact&langs_count=10&theme=tokyonight&hide_border=true"
+    height="180"
+    alt="Most used programming languages"
+  />
+</p>
+
+<!-- CONTRIBUTION STREAK -->
+<p align="center">
+  <img
+    src="https://streak-stats.demolab.com?user=Chera-Wondimu&theme=tokyonight&hide_border=true&border_radius=12"
+    width="75%"
+    alt="GitHub contribution streak"
+  />
+</p>
 
 <!-- ANIMATED CONTRIBUTION SNAKE -->
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Chera-Wondimu/Chera-Wondimu/output/github-contribution-grid-snake-dark.svg" width="100%" alt="Animated GitHub contribution snake"/>
+  <img
+    src="https://raw.githubusercontent.com/Chera-Wondimu/Chera-Wondimu/output/github-contribution-grid-snake-dark.svg"
+    width="100%"
+    alt="Animated GitHub contribution snake"
+  />
+</p>
+
+<p align="center">
+  <i>Every contribution represents another step forward.</i>
 </p>
 
 ---
+
 
 <!-- CONTACT -->
 <p align="center">
