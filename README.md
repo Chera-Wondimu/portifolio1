@@ -1,11 +1,16 @@
 
-<!-- =========================================
-     CHERA WONDIMU — GITHUB PROFILE
-========================================== -->
+<!-- =====================================================
+     CHERA WONDIMU | GITHUB PROFILE README
+====================================================== -->
 
-<!-- BANNER -->
+<!-- ANIMATED BANNER -->
 <p align="center">
-  <img src="./assets/banner.svg" width="100%" alt="Chera Wondimu — Software Engineering Student and Backend-Focused Full-Stack Developer"/>
+  <img src="./assets/banner.svg" width="100%" alt="Chera Wondimu — Software Engineering Student"/>
+</p>
+
+<!-- ANIMATED TYPING INTRODUCTION -->
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=A78BFA&center=true&vCenter=true&width=750&lines=Backend-Focused+Full-Stack+Developer;Software+Engineering+Student+%40+ASTU;Competitive+Programmer;Building+Projects+and+Solving+Problems;Always+Learning+and+Improving" alt="Animated introduction"/>
 </p>
 
 <!-- SOCIAL LINKS -->
@@ -39,11 +44,13 @@
 </p>
 
 <p align="center">
-  I'm a third-year Software Engineering student at <b>Adama Science and Technology University (ASTU)</b>, Ethiopia.
+  I'm a third-year Software Engineering student at
+  <b>Adama Science and Technology University (ASTU)</b>, Ethiopia.
 </p>
 
 <p align="center">
-  I enjoy building software, solving algorithmic problems, and turning ideas into practical applications. My primary focus is backend development, while continuously growing as a full-stack developer.
+  I enjoy building software, solving algorithmic problems, and turning ideas into practical applications.
+  My primary focus is backend development, while continuously growing as a full-stack developer.
 </p>
 
 <p align="center">
@@ -96,17 +103,17 @@
 
 <p align="center">
   <a href="https://github.com/Chera-Wondimu/university-learning-and-internship-platform">
-    <img src="./assets/project-unipath.svg" width="49%" alt="UniPath — University Learning and Internship Platform"/>
+    <img src="./assets/project-unipath.svg" width="49%" alt="UniPath project"/>
   </a>
   <a href="https://github.com/Chera-Wondimu/backend-development-90-days-projects">
-    <img src="./assets/project-backend.svg" width="49%" alt="Backend Development Projects"/>
+    <img src="./assets/project-backend.svg" width="49%" alt="Backend development projects"/>
   </a>
   <a href="https://github.com/Chera-Wondimu/CSEC-CPD-PRACTICE">
-    <img src="./assets/project-cp.svg" width="49%" alt="Competitive Programming Practice"/>
+    <img src="./assets/project-cp.svg" width="49%" alt="Competitive programming practice"/>
   </a>
 </p>
 
-### Projects
+### Featured Work
 
 **1. [UniPath — University Learning and Internship Platform](https://github.com/Chera-Wondimu/university-learning-and-internship-platform)**
 
@@ -142,7 +149,7 @@ A collection of algorithmic problem-solving exercises and solutions, primarily u
 </p>
 
 <p align="center">
-  <img src="https://leetcard.jacoblin.cool/Chera_Wondimu?theme=dark&font=JetBrains%20Mono&ext=heatmap&border=0&radius=12" width="75%" alt="LeetCode Statistics and Activity"/>
+  <img src="https://leetcard.jacoblin.cool/Chera_Wondimu?theme=dark&font=JetBrains%20Mono&ext=heatmap&border=0&radius=12" width="75%" alt="LeetCode Statistics"/>
 </p>
 
 ---
@@ -163,6 +170,13 @@ A collection of algorithmic problem-solving exercises and solutions, primarily u
 
 ---
 
+<!-- ANIMATED CONTRIBUTION SNAKE -->
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Chera-Wondimu/Chera-Wondimu/output/github-contribution-grid-snake-dark.svg" width="100%" alt="Animated GitHub contribution snake"/>
+</p>
+
+---
+
 <!-- CONTACT -->
 <p align="center">
   <b>Let's connect and build something meaningful.</b>
@@ -178,7 +192,12 @@ A collection of algorithmic problem-solving exercises and solutions, primarily u
   </a>
 </p>
 
+<!-- PERSONAL MOTTO -->
+<p align="center">
+  <i>"Waan jalqabde xumuri. Waan baratte ijaari. Waan ijaarte agarsiisi. Waan dogoggorte irraa baradhu. Sana irra deebi'i."</i>
+</p>
+
 <!-- FOOTER -->
 <p align="center">
-  <img src="./assets/footer.svg" width="100%" alt="Keep learning, building, and improving"/>
+  <img src="./assets/footer.svg" width="100%" alt="Keep learning, building and improving"/>
 </p>
