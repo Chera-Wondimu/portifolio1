@@ -1,617 +1,474 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Chera Wondimu — Software Engineering student and backend-focused full-stack developer. Explore my projects, skills, and coding journey.">
+    <meta name="description" content="Chera Wondimu — Software Engineering student at ASTU. Competitive programming, backend development, and software engineering.">
     <meta name="author" content="Chera Wondimu">
-    <title>Chera Wondimu | Software Engineer & Full-Stack Developer</title>
+    <meta name="keywords" content="Chera Wondimu, Software Engineer, ASTU, Adama Science and Technology University, Competitive Programming, Backend Developer, Python, C++, Java, Portfolio, Ethiopia">
+    <link rel="canonical" href="https://chera-wondimu.vercel.app/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Chera Wondimu — Software Engineering Student & Developer">
+    <meta property="og:description" content="Software Engineering student at ASTU, passionate about backend development, competitive programming, and building software solutions.">
+    <meta property="og:url" content="https://chera-wondimu.vercel.app/">
+    <meta property="og:image" content="https://raw.githubusercontent.com/Chera-Wondimu/Chera-Wondimu/main/images/carroo.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Chera Wondimu — Software Engineering Student & Developer">
+    <meta name="twitter:description" content="Software Engineering student at ASTU, passionate about backend development, competitive programming, and building software solutions.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/Chera-Wondimu/Chera-Wondimu/main/images/carroo.jpg">
+    <title>Chera Wondimu — Software Engineering Student & Developer</title>
 
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/script.js" defer></script>
+
+    <!-- Apply saved theme before page paints to avoid flash -->
+    <script>
+        (function () {
+            try {
+                var saved = localStorage.getItem("theme");
+                var theme = saved || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+                document.documentElement.setAttribute("data-theme", theme);
+            } catch (e) {}
+        })();
+    </script>
 </head>
+
 <body>
+    <!-- Accessibility: skip to content -->
+    <a href="#hero" class="skip-link">Skip to content</a>
 
-    <!-- Background decoration -->
-    <div class="background-grid"></div>
-    <div class="glow glow-one"></div>
-    <div class="glow glow-two"></div>
-
-    <!-- Navigation -->
+    <!-- =====================================================================
+         HEADER / STICKY NAVIGATION
+         ===================================================================== -->
     <header class="header" id="header">
-        <nav class="navbar container">
-            <a href="#home" class="logo">Chera.W<span>.</span></a>
+        <div class="container nav">
+            <a href="#hero" class="brand">Chera<span>.W</span></a>
 
-            <button class="menu-toggle" id="menuToggle"
-                    aria-label="Open navigation menu"
-                    aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
+            <!-- Hidden checkbox toggles mobile menu -->
+            <input type="checkbox" id="nav-toggle" class="nav__toggle">
+            <label for="nav-toggle" class="nav__burger" aria-label="Toggle navigation menu">
+                <span></span><span></span><span></span>
+            </label>
+
+            <nav class="nav__menu" aria-label="Primary">
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#cp">CP</a></li>
+                    <li><a href="#github">GitHub</a></li>
+                    <li><a href="#contact" class="nav__cta">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Dark / light theme toggle -->
+            <button class="theme-btn" id="theme-btn" type="button" aria-label="Switch between dark and light theme" title="Toggle theme">
+                <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+                <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
             </button>
-
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#coding" class="nav-link">Coding</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-
-            <a href="#contact" class="nav-button">Let's Talk <span>↗</span></a>
-        </nav>
+        </div>
     </header>
 
     <main>
+        <!-- =====================================================================
+             1. HERO
+             ===================================================================== -->
+        <section class="hero section" id="hero">
+            <div class="container hero__inner">
+                <div class="hero__text">
+                    <p class="eyebrow"></> Software Engineering Student</p>
+                    <h1 class="hero__name">Chera Wondimu</h1>
 
-        <!-- Hero -->
-        <section class="hero section" id="home">
-            <div class="container hero-container">
-                <div class="hero-content">
-                    <div class="availability">
-                        <span class="availability-dot"></span>
-                        SOFTWARE ENGINEERING STUDENT
-                    </div>
+                    <ul class="hero__roles">
+                        <li>Software Engineering Student</li>
+                        <li>Competitive Programming Enthusiast</li>
+                        <li>Backend Developer</li>
+                    </ul>
 
-                    <p class="hero-greeting">Hello, I'm</p>
-                    <h1>Chera <span>Wondimu.</span></h1>
-
-                    <h2 class="hero-role">
-                        I build <span id="typewriter">backend systems</span><span class="cursor">|</span>
-                    </h2>
-
-                    <p class="hero-description">
-                        A third-year Software Engineering student at Adama Science
-                        and Technology University, passionate about backend
-                        engineering, full-stack development, algorithms, and
-                        building practical solutions through code.
+                    <p class="hero__intro">
+                        I'm a Software Engineering student at Adama Science and Technology University
+                        (ASTU). I am passionate about backend engineering, data structures & algorithms,
+                        and building robust applications through code.
                     </p>
 
-                    <div class="hero-actions">
-                        <a href="#projects" class="button button-primary">
-                            Explore My Work <span>↗</span>
-                        </a>
-                        <a href="#contact" class="button button-outline">
-                            Get In Touch
-                        </a>
-                    </div>
-
-                    <div class="social-links">
-                        <a href="https://github.com/Chera-Wondimu" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GH</a>
-                        <a href="https://www.linkedin.com/in/codedbychera/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">in</a>
-                        <a href="https://leetcode.com/u/Chera_Wondimu/" target="_blank" rel="noopener noreferrer" aria-label="LeetCode">LC</a>
-                        <a href="https://codeforces.com/profile/chera.wondimu17" target="_blank" rel="noopener noreferrer" aria-label="Codeforces">CF</a>
+                    <div class="hero__actions">
+                        <a href="#contact" class="btn btn--primary">Contact Me</a>
+                        <a href="#github" class="btn btn--ghost">View GitHub</a>
                     </div>
                 </div>
 
-                <div class="hero-visual">
-                    <div class="image-orbit orbit-one"></div>
-                    <div class="image-orbit orbit-two"></div>
-
-                    <div class="hero-image">
-                        <img src="images/carroo.jpg"
-                             alt="Chera Wondimu profile photo"
-                             onerror="this.style.display='none'; this.parentElement.classList.add('image-missing');">
-                        <span class="image-fallback">CW</span>
+                <div class="hero__media">
+                    <div class="avatar">
+                        <img src="images/carroo.jpg" alt="Chera Wondimu" onerror="this.style.display='none';">
                     </div>
-
-                    <div class="floating-card card-code">
-                        <span class="floating-icon">&lt;/&gt;</span>
-                        <div>
-                            <strong>Backend</strong>
-                            <small>Developer</small>
-                        </div>
+                    <div class="hero__badge">
+                        <strong>ASTU</strong>
+                        <span>Software Engineering</span>
                     </div>
-
-                    <div class="floating-card card-location">
-                        <span class="location-icon">⌖</span>
-                        <div>
-                            <strong>ASTU</strong>
-                            <small>Ethiopia</small>
-                        </div>
-                    </div>
-
-                    <div class="hero-decoration">BUILD · LEARN · REPEAT</div>
                 </div>
-            </div>
-
-            <div class="hero-bottom container">
-                <span>SCROLL TO EXPLORE</span>
-                <span class="scroll-line"></span>
-                <span>01 / 05</span>
             </div>
         </section>
 
-        <!-- About -->
-        <section class="section about-section" id="about">
+        <!-- =====================================================================
+             2. ABOUT
+             ===================================================================== -->
+        <section class="section" id="about">
             <div class="container">
-                <div class="section-heading reveal">
-                    <span class="section-label">01 — ABOUT ME</span>
-                    <h2>Turning ideas into <span>working software.</span></h2>
-                </div>
+                <header class="section__head">
+                    <p class="section__index">01 — About</p>
+                    <h2 class="section__title">Get to know me</h2>
+                </header>
 
-                <div class="about-grid">
-                    <div class="about-main reveal">
-                        <p class="about-lead">
-                            I am a developer who enjoys understanding how software
-                            works behind the scenes and turning complex problems
-                            into practical solutions.
-                        </p>
-
+                <div class="about">
+                    <div class="about__text">
                         <p>
-                            Currently, I am studying Software Engineering at
-                            Adama Science and Technology University (ASTU).
-                            My main focus is backend development, while I continue
-                            strengthening my frontend, database, and software
-                            engineering skills.
+                            Hello! I'm <strong>Chera Wondimu</strong>, a Software Engineering student at
+                            <strong>Adama Science and Technology University (ASTU)</strong>. My focus lies
+                            in building reliable backend systems and expanding my software development expertise.
                         </p>
-
                         <p>
-                            I also practice Data Structures and Algorithms through
-                            competitive programming. I believe becoming a strong
-                            engineer means understanding concepts deeply, building
-                            real projects, learning from mistakes, and improving
-                            consistently.
+                            I actively practice <strong>competitive programming</strong> on platforms like LeetCode and
+                            Codeforces to sharpen my problem-solving skills and algorithmic intuition. Alongside algorithmic
+                            challenges, I am dedicated to learning full-stack development, database architecture, and backend engineering practices.
                         </p>
-
-                        <a class="text-link" href="mailto:cherawondimu@gmail.com">
-                            Let's work together <span>↗</span>
-                        </a>
+                        <p>
+                            I enjoy turning theoretical concepts into functional code and building projects that solve real-world problems.
+                        </p>
                     </div>
 
-                    <div class="about-details reveal">
-                        <div class="detail-card">
-                            <span class="detail-number">01</span>
-                            <div>
-                                <h3>Backend Engineering</h3>
-                                <p>Building server-side applications, APIs, and database-driven systems.</p>
-                            </div>
-                        </div>
-
-                        <div class="detail-card">
-                            <span class="detail-number">02</span>
-                            <div>
-                                <h3>Full-Stack Development</h3>
-                                <p>Creating complete web applications from frontend to backend.</p>
-                            </div>
-                        </div>
-
-                        <div class="detail-card">
-                            <span class="detail-number">03</span>
-                            <div>
-                                <h3>Problem Solving</h3>
-                                <p>Practicing algorithms and data structures with Python and C++.</p>
-                            </div>
-                        </div>
-
-                        <div class="detail-card">
-                            <span class="detail-number">04</span>
-                            <div>
-                                <h3>Continuous Learning</h3>
-                                <p>Exploring data science, artificial intelligence, and new technologies.</p>
-                            </div>
-                        </div>
-                    </div>
+                    <ul class="about__highlights">
+                        <li>
+                            <span class="about__hl-icon" aria-hidden="true">🎓</span>
+                            <div><strong>Studying at ASTU</strong><small>B.Sc. Software Engineering</small></div>
+                        </li>
+                        <li>
+                            <span class="about__hl-icon" aria-hidden="true">🧩</span>
+                            <div><strong>Competitive Programming</strong><small>LeetCode & Codeforces</small></div>
+                        </li>
+                        <li>
+                            <span class="about__hl-icon" aria-hidden="true">⚙️</span>
+                            <div><strong>Backend Focus</strong><small>APIs, Node.js, & Databases</small></div>
+                        </li>
+                        <li>
+                            <span class="about__hl-icon" aria-hidden="true">🚀</span>
+                            <div><strong>Always Building</strong><small>Projects & continuous growth</small></div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <!-- Skills -->
-        <section class="section skills-section" id="skills">
+        <!-- =====================================================================
+             3. SKILLS
+             ===================================================================== -->
+        <section class="section section--alt" id="skills">
             <div class="container">
-                <div class="section-heading reveal">
-                    <span class="section-label">02 — MY TOOLKIT</span>
-                    <h2>Technologies I <span>work with.</span></h2>
-                    <p>Tools and technologies I use while learning and building software.</p>
-                </div>
+                <header class="section__head">
+                    <p class="section__index">02 — Skills</p>
+                    <h2 class="section__title">What I work with</h2>
+                </header>
 
-                <div class="skills-grid">
-                    <article class="skill-card reveal">
-                        <div class="skill-icon">01</div>
-                        <h3>Programming Languages</h3>
-                        <div class="skill-tags">
-                            <span>Python</span>
-                            <span>C++</span>
-                            <span>Java</span>
-                            <span>JavaScript</span>
-                        </div>
+                <div class="skills">
+                    <article class="card skill">
+                        <h3 class="skill__title">Programming Languages</h3>
+                        <ul class="tags">
+                            <li>Python</li><li>C++</li><li>Java</li><li>JavaScript</li>
+                        </ul>
                     </article>
 
-                    <article class="skill-card reveal">
-                        <div class="skill-icon">02</div>
-                        <h3>Frontend Development</h3>
-                        <div class="skill-tags">
-                            <span>HTML5</span>
-                            <span>CSS3</span>
-                            <span>JavaScript</span>
-                            <span>React</span>
-                        </div>
+                    <article class="card skill">
+                        <h3 class="skill__title">Backend Development</h3>
+                        <ul class="tags">
+                            <li>Node.js</li><li>Express.js</li><li>REST APIs</li><li>Server-side logic</li>
+                        </ul>
                     </article>
 
-                    <article class="skill-card reveal">
-                        <div class="skill-icon">03</div>
-                        <h3>Backend Development</h3>
-                        <div class="skill-tags">
-                            <span>Node.js</span>
-                            <span>Express.js</span>
-                            <span>REST APIs</span>
-                        </div>
+                    <article class="card skill">
+                        <h3 class="skill__title">Databases</h3>
+                        <ul class="tags">
+                            <li>PostgreSQL</li><li>MySQL</li><li>SQL</li>
+                        </ul>
                     </article>
 
-                    <article class="skill-card reveal">
-                        <div class="skill-icon">04</div>
-                        <h3>Databases</h3>
-                        <div class="skill-tags">
-                            <span>PostgreSQL</span>
-                            <span>MySQL</span>
-                            <span>SQL</span>
-                        </div>
+                    <article class="card skill">
+                        <h3 class="skill__title">Competitive Programming</h3>
+                        <ul class="tags">
+                            <li>Data Structures & Algorithms</li><li>Problem Solving</li>
+                        </ul>
                     </article>
 
-                    <article class="skill-card reveal">
-                        <div class="skill-icon">05</div>
-                        <h3>Data & Learning</h3>
-                        <div class="skill-tags">
-                            <span>NumPy</span>
-                            <span>Pandas</span>
-                            <span>Matplotlib</span>
-                            <span>Jupyter</span>
-                        </div>
+                    <article class="card skill">
+                        <h3 class="skill__title">Web Frontend</h3>
+                        <ul class="tags">
+                            <li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>React</li>
+                        </ul>
                     </article>
 
-                    <article class="skill-card reveal">
-                        <div class="skill-icon">06</div>
-                        <h3>Tools & Workflow</h3>
-                        <div class="skill-tags">
-                            <span>Git</span>
-                            <span>GitHub</span>
-                            <span>Docker</span>
-                            <span>VS Code</span>
-                        </div>
+                    <article class="card skill">
+                        <h3 class="skill__title">Tools & Workflow</h3>
+                        <ul class="tags">
+                            <li>Git</li><li>GitHub</li><li>Docker</li><li>VS Code</li>
+                        </ul>
                     </article>
                 </div>
             </div>
         </section>
 
-        <!-- Projects -->
-        <section class="section projects-section" id="projects">
+        <!-- =====================================================================
+             4. PROJECTS
+             ===================================================================== -->
+        <section class="section" id="projects">
             <div class="container">
-                <div class="section-heading reveal">
-                    <span class="section-label">03 — SELECTED WORK</span>
-                    <h2>Things I've <span>built.</span></h2>
-                    <p>Projects and practical work from my software development journey.</p>
-                </div>
+                <header class="section__head">
+                    <p class="section__index">03 — Projects</p>
+                    <h2 class="section__title">Selected work</h2>
+                    <p class="section__lead">A showcase of some repositories and applications I have built.</p>
+                </header>
 
-                <div class="projects-grid">
+                <div class="repos" id="repo-list">
+                    <a href="https://github.com/Chera-Wondimu/university-learning-and-internship-platform" target="_blank" rel="noopener" class="card repo">
+                        <span class="repo__name">university-learning-and-internship-platform</span>
+                        <span class="repo__desc">A platform connecting university students with learning resources and internship opportunities, featuring user authentication and recruiter management.</span>
+                        <span class="repo__meta"><span class="repo__dot"></span>React / Node.js</span>
+                    </a>
 
-                    <!-- Project 1 -->
-                    <article class="project-card reveal">
-                        <div class="project-preview unipath-preview">
-                            <div class="preview-top">
-                                <span class="preview-logo">UniPath</span>
-                                <span class="preview-status">WEB PLATFORM</span>
-                            </div>
-                            <div class="preview-dashboard">
-                                <div class="preview-sidebar">
-                                    <i></i><i></i><i></i><i></i>
-                                </div>
-                                <div class="preview-main">
-                                    <div class="preview-heading"></div>
-                                    <div class="preview-boxes">
-                                        <i></i><i></i><i></i>
-                                    </div>
-                                    <div class="preview-content-line"></div>
-                                    <div class="preview-content-line short"></div>
-                                    <div class="preview-content-line"></div>
-                                </div>
-                            </div>
-                            <span class="project-index">PROJECT 01</span>
-                        </div>
+                    <a href="https://github.com/Chera-Wondimu/backend-development-90-days-projects" target="_blank" rel="noopener" class="card repo">
+                        <span class="repo__name">backend-development-90-days-projects</span>
+                        <span class="repo__desc">A structured learning and practice repository documenting backend development exercises and server-side programming projects.</span>
+                        <span class="repo__meta"><span class="repo__dot"></span>JavaScript</span>
+                    </a>
 
-                        <div class="project-info">
-                            <div class="project-meta">
-                                <span>FULL-STACK DEVELOPMENT</span>
-                                <span>01 / 03</span>
-                            </div>
-                            <h3>UniPath — University Learning & Internship Platform</h3>
-                            <p>
-                                A platform designed to connect university students
-                                with learning resources and internship opportunities.
-                                Includes authentication, internship management,
-                                applications, and recruiter application management.
-                            </p>
-                            <div class="project-tech">
-                                <span>React</span>
-                                <span>Node.js</span>
-                                <span>Express</span>
-                                <span>PostgreSQL</span>
-                            </div>
-                            <a class="project-link"
-                               href="https://github.com/Chera-Wondimu/university-learning-and-internship-platform"
-                               target="_blank" rel="noopener noreferrer">
-                                View Repository <span>↗</span>
-                            </a>
-                        </div>
-                    </article>
-
-                    <!-- Project 2 -->
-                    <article class="project-card reveal">
-                        <div class="project-preview backend-preview">
-                            <div class="terminal-window">
-                                <div class="terminal-bar">
-                                    <i></i><i></i><i></i>
-                                    <span>backend-development</span>
-                                </div>
-                                <div class="terminal-code">
-                                    <p><span class="terminal-purple">const</span> server = <span class="terminal-blue">require</span>(<span class="terminal-green">'express'</span>);</p>
-                                    <p>app.<span class="terminal-blue">listen</span>(<span class="terminal-orange">5000</span>);</p>
-                                    <p class="terminal-muted">// Building backend systems</p>
-                                    <p><span class="terminal-purple">GET</span> /api/projects</p>
-                                    <p><span class="terminal-green">✓</span> Server ready</p>
-                                </div>
-                            </div>
-                            <span class="project-index">PROJECT 02</span>
-                        </div>
-
-                        <div class="project-info">
-                            <div class="project-meta">
-                                <span>BACKEND DEVELOPMENT</span>
-                                <span>02 / 03</span>
-                            </div>
-                            <h3>Backend Development — 90 Days</h3>
-                            <p>
-                                A practical learning repository documenting backend
-                                development exercises and projects, with a focus on
-                                Node.js, server-side programming, and building APIs.
-                            </p>
-                            <div class="project-tech">
-                                <span>JavaScript</span>
-                                <span>Node.js</span>
-                                <span>Express</span>
-                                <span>Git</span>
-                            </div>
-                            <a class="project-link"
-                               href="https://github.com/Chera-Wondimu/backend-development-90-days-projects"
-                               target="_blank" rel="noopener noreferrer">
-                                View Repository <span>↗</span>
-                            </a>
-                        </div>
-                    </article>
-
-                    <!-- Project 3 -->
-                    <article class="project-card reveal">
-                        <div class="project-preview cp-preview">
-                            <div class="cp-window">
-                                <div class="cp-window-title">
-                                    <span>ALGORITHM PRACTICE</span>
-                                    <span>PYTHON / C++</span>
-                                </div>
-                                <div class="cp-problem">
-                                    <span class="cp-number">01</span>
-                                    <div>
-                                        <strong>Problem Solving</strong>
-                                        <small>Arrays · Greedy · Two Pointers</small>
-                                    </div>
-                                    <span class="cp-check">✓</span>
-                                </div>
-                                <div class="cp-problem">
-                                    <span class="cp-number">02</span>
-                                    <div>
-                                        <strong>Data Structures</strong>
-                                        <small>Lists · Strings · Sorting</small>
-                                    </div>
-                                    <span class="cp-check">✓</span>
-                                </div>
-                                <div class="cp-problem">
-                                    <span class="cp-number">03</span>
-                                    <div>
-                                        <strong>Competitive Programming</strong>
-                                        <small>Codeforces practice</small>
-                                    </div>
-                                    <span class="cp-check">✓</span>
-                                </div>
-                            </div>
-                            <span class="project-index">PROJECT 03</span>
-                        </div>
-
-                        <div class="project-info">
-                            <div class="project-meta">
-                                <span>ALGORITHMS & PROBLEM SOLVING</span>
-                                <span>03 / 03</span>
-                            </div>
-                            <h3>Competitive Programming Practice</h3>
-                            <p>
-                                A collection of competitive programming solutions
-                                and practice problems focused on algorithms,
-                                data structures, and improving problem-solving skills.
-                            </p>
-                            <div class="project-tech">
-                                <span>Python</span>
-                                <span>C++</span>
-                                <span>Algorithms</span>
-                                <span>DSA</span>
-                            </div>
-                            <a class="project-link"
-                               href="https://github.com/Chera-Wondimu/CSEC-CPD-PRACTICE"
-                               target="_blank" rel="noopener noreferrer">
-                                View Repository <span>↗</span>
-                            </a>
-                        </div>
-                    </article>
-
-                </div>
-
-                <div class="all-projects reveal">
-                    <a href="https://github.com/Chera-Wondimu?tab=repositories"
-                       target="_blank" rel="noopener noreferrer"
-                       class="button button-outline">
-                        Explore All GitHub Repositories <span>↗</span>
+                    <a href="https://github.com/Chera-Wondimu/CSEC-CPD-PRACTICE" target="_blank" rel="noopener" class="card repo">
+                        <span class="repo__name">CSEC-CPD-PRACTICE</span>
+                        <span class="repo__desc">Competitive programming solutions and algorithm practice problems focused on sharpening data structures and problem-solving abilities.</span>
+                        <span class="repo__meta"><span class="repo__dot"></span>Python / C++</span>
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- Coding Profiles -->
-        <section class="section coding-section" id="coding">
+        <!-- =====================================================================
+             5. COMPETITIVE PROGRAMMING
+             ===================================================================== -->
+        <section class="section section--alt" id="cp">
             <div class="container">
-                <div class="section-heading reveal">
-                    <span class="section-label">04 — PROBLEM SOLVING</span>
-                    <h2>Beyond building, I <span>solve.</span></h2>
-                    <p>Consistently practicing data structures, algorithms, and coding challenges.</p>
+                <header class="section__head">
+                    <p class="section__index">04 — Competitive Programming</p>
+                    <h2 class="section__title">My CP journey</h2>
+                    <p class="section__lead">
+                        I sharpen my algorithmic thinking through regular practice on LeetCode and Codeforces.
+                    </p>
+                </header>
+
+                <div class="stats">
+                    <article class="card stat">
+                        <span class="stat__num" id="lc-total">300</span>
+                        <span class="stat__label">LeetCode Solved</span>
+                    </article>
+                    <article class="card stat stat--easy">
+                        <span class="stat__num" id="lc-easy">156</span>
+                        <span class="stat__label">Easy Problems</span>
+                    </article>
+                    <article class="card stat stat--medium">
+                        <span class="stat__num" id="lc-medium">125</span>
+                        <span class="stat__label">Medium Problems</span>
+                    </article>
+                    <article class="card stat stat--hard">
+                        <span class="stat__num" id="lc-hard">19</span>
+                        <span class="stat__label">Hard Problems</span>
+                    </article>
                 </div>
 
-                <div class="coding-grid">
-
-                    <!-- LeetCode -->
-                    <article class="coding-card reveal">
-                        <div class="coding-card-header">
-                            <div class="coding-brand leetcode-brand">LC</div>
-                            <div>
-                                <h3>LeetCode</h3>
-                                <p>Algorithm practice</p>
-                            </div>
-                            <a href="https://leetcode.com/u/Chera_Wondimu/"
-                               target="_blank" rel="noopener noreferrer"
-                               aria-label="Open LeetCode profile">↗</a>
-                        </div>
-
-                        <div class="leetcode-total">
-                            <strong id="leetcode-total">300</strong>
-                            <span>Problems solved</span>
-                        </div>
-
-                        <div class="difficulty-row">
-                            <div>
-                                <span>Easy</span>
-                                <strong id="leetcode-easy">156</strong>
-                            </div>
-                            <div>
-                                <span>Medium</span>
-                                <strong id="leetcode-medium">125</strong>
-                            </div>
-                            <div>
-                                <span>Hard</span>
-                                <strong id="leetcode-hard">19</strong>
-                            </div>
-                        </div>
-
-                        <div class="difficulty-bars">
-                            <span id="easy-bar" style="width: 52%;"></span>
-                            <span id="medium-bar" style="width: 41.67%;"></span>
-                            <span id="hard-bar" style="width: 6.33%;"></span>
-                        </div>
-
-                        <p class="api-status" id="leetcode-status" aria-live="polite">
-                            Showing saved baseline. Checking live statistics...
-                        </p>
-
-                        <a class="text-link"
-                           href="https://leetcode.com/u/Chera_Wondimu/"
-                           target="_blank" rel="noopener noreferrer">
-                            Visit LeetCode Profile ↗
-                        </a>
-                    </article>
-
-                    <!-- Codeforces -->
-                    <article class="coding-card reveal">
-                        <div class="coding-card-header">
-                            <div class="coding-brand cf-brand">CF</div>
-                            <div>
-                                <h3>Codeforces</h3>
-                                <p>Competitive programming</p>
-                            </div>
-                            <a href="https://codeforces.com/profile/chera.wondimu17"
-                               target="_blank" rel="noopener noreferrer"
-                               aria-label="Open Codeforces profile">↗</a>
-                        </div>
-
-                        <div class="cf-rating-area">
-                            <span>Current Rating</span>
-                            <strong id="cf-rating">—</strong>
-                            <small id="cf-rank">Loading rank...</small>
-                        </div>
-
-                        <div class="cf-stats">
-                            <div>
-                                <span>Problems Solved</span>
-                                <strong id="cf-solved">328</strong>
-                            </div>
-                            <div>
-                                <span>Maximum Rating</span>
-                                <strong id="cf-max-rating">—</strong>
-                            </div>
-                        </div>
-
-                        <p class="api-status" id="codeforces-status" aria-live="polite">
-                            Showing saved baseline. Checking live statistics...
-                        </p>
-
-                        <a class="text-link"
-                           href="https://codeforces.com/profile/chera.wondimu17"
-                           target="_blank" rel="noopener noreferrer">
-                            Visit Codeforces Profile ↗
-                        </a>
-                    </article>
-
+                <div class="cp__cta">
+                    <a href="https://leetcode.com/u/Chera_Wondimu/" target="_blank" rel="noopener" class="btn btn--sm btn--dark">
+                        View LeetCode Profile
+                    </a>
+                    <a href="https://codeforces.com/profile/chera.wondimu17" target="_blank" rel="noopener" class="btn btn--sm btn--ghost">
+                        View Codeforces Profile
+                    </a>
                 </div>
             </div>
         </section>
 
-        
-<```html
-<!-- Contact -->
-<section class="section contact-section" id="contact">
-    <div class="container">
-        <div class="contact-box reveal">
+        <!-- =====================================================================
+             6. GITHUB SHOWCASE
+             ===================================================================== -->
+        <section class="section" id="github">
+            <div class="container">
+                <header class="section__head">
+                    <p class="section__index">05 — GitHub</p>
+                    <h2 class="section__title">On GitHub</h2>
+                </header>
 
-            <span class="section-label">05 — CONTACT</span>
+                <div class="gh">
+                    <div class="card gh__profile">
+                        <div class="gh__avatar" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="42" height="42" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.36-3.88-1.36-.53-1.34-1.3-1.7-1.3-1.7-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.73 1.27 3.4.97.1-.75.4-1.27.73-1.56-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.23 2.75.11 3.04.74.8 1.19 1.82 1.19 3.08 0 4.41-2.69 5.39-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5Z"/></svg>
+                        </div>
+                        <h3 class="gh__name">@Chera-Wondimu</h3>
+                        <p class="gh__desc">Software Engineering student building backend solutions and learning in public.</p>
+                        <a href="https://github.com/Chera-Wondimu" target="_blank" rel="noopener" class="btn btn--sm btn--dark">Visit profile</a>
+                    </div>
 
-            <h2>Let's Connect and <span>Build Something.</span></h2>
-
-            <p>
-                Have a project idea, internship opportunity, or collaboration
-                in mind? Interested in discussing technology or working
-                together? I'd love to hear from you.
-                Feel free to reach out through email.
-            </p>
-
-            <a
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=chera.wondimu17@gmail.com&su=Portfolio%20Contact"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="button button-primary">
-                Send Me an Email <span>↗</span>
-            </a>
-
-            <div class="contact-email">
-                <span>My email address:</span>
-                <a href="mailto:chera.wondimu17@gmail.com">
-                    chera.wondimu17@gmail.com
-                </a>
+                    <div class="gh__stats">
+                        <article class="card stat">
+                            <span class="stat__num" id="gh-repos">12</span><span class="stat__label">Public Repositories</span>
+                        </article>
+                        <article class="card stat">
+                            <span class="stat__num" id="gh-contrib">—</span><span class="stat__label">Contributions</span>
+                        </article>
+                        <article class="card stat">
+                            <span class="stat__num" id="gh-followers">—</span><span class="stat__label">Followers</span>
+                        </article>
+                        <article class="card stat">
+                            <span class="stat__num" id="gh-following">—</span><span class="stat__label">Following</span>
+                        </article>
+                    </div>
+                </div>
             </div>
+        </section>
 
-        </div>
-    </div>
-</section>
-```
+        <!-- =====================================================================
+             7. CONTACT
+             ===================================================================== -->
+        <section class="section section--alt" id="contact">
+            <div class="container">
+                <header class="section__head">
+                    <p class="section__index">06 — Contact</p>
+                    <h2 class="section__title">Let's connect</h2>
+                    <p class="section__lead">Have a project idea, internship opportunity, or collaboration in mind? Feel free to reach out.</p>
+                </header>
+
+                <div class="contacts">
+                    <a class="card contact" href="mailto:chera.wondimu17@gmail.com">
+                        <span class="contact__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+                        </span>
+                        <span class="contact__label">Email</span>
+                        <span class="contact__value">chera.wondimu17@gmail.com</span>
+                    </a>
+
+                    <a class="card contact" href="https://www.linkedin.com/in/codedbychera/" target="_blank" rel="noopener">
+                        <span class="contact__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.3 0-2.95-1.8-2.95s-2.08 1.4-2.08 2.85V21H9z"/></svg>
+                        </span>
+                        <span class="contact__label">LinkedIn</span>
+                        <span class="contact__value">/in/codedbychera</span>
+                    </a>
+
+                    <a class="card contact" href="https://github.com/Chera-Wondimu" target="_blank" rel="noopener">
+                        <span class="contact__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.36-3.88-1.36-.53-1.34-1.3-1.7-1.3-1.7-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.73 1.27 3.4.97.1-.75.4-1.27.73-1.56-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.23 2.75.11 3.04.74.8 1.19 1.82 1.19 3.08 0 4.41-2.69 5.39-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5Z"/></svg>
+                        </span>
+                        <span class="contact__label">GitHub</span>
+                        <span class="contact__value">@Chera-Wondimu</span>
+                    </a>
+
+                    <a class="card contact" href="https://codeforces.com/profile/chera.wondimu17" target="_blank" rel="noopener">
+                        <span class="contact__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><rect x="2" y="10" width="4" height="11" rx="1"/><rect x="10" y="4" width="4" height="17" rx="1"/><rect x="18" y="14" width="4" height="7" rx="1"/></svg>
+                        </span>
+                        <span class="contact__label">Codeforces</span>
+                        <span class="contact__value">chera.wondimu17</span>
+                    </a>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <!-- Footer -->
+    <!-- =====================================================================
+         FOOTER
+         ===================================================================== -->
     <footer class="footer">
-        <div class="container footer-content">
-            <a href="#home" class="logo">Chera<span>.</span></a>
-            <p>Designed & built by Chera Wondimu.</p>
-            <p>© <span id="currentYear"></span> All rights reserved.</p>
+        <div class="container footer__inner">
+            <a href="#hero" class="brand">Chera<span>.W</span></a>
+            <p class="footer__copy">© 2026 Chera Wondimu · Built with HTML & CSS</p>
         </div>
     </footer>
 
-    <a href="#home" class="back-to-top" id="backToTop" aria-label="Back to top">↑</a>
+    <!-- =====================================================================
+         LIVE STATS + THEME SCRIPT
+         ===================================================================== -->
+    <script>
+        (function () {
+            "use strict";
 
+            var LEETCODE_USER = "Chera_Wondimu";
+            var GITHUB_USER   = "Chera-Wondimu";
+
+            function setNum(id, v) {
+                var el = document.getElementById(id);
+                if (el && v !== null && v !== undefined && v !== "" && !Number.isNaN(Number(v))) {
+                    el.textContent = v;
+                }
+            }
+
+            function esc(s) {
+                return String(s).replace(/[&<>"']/g, function (c) {
+                    return { "&": "&", "<": "<", ">": ">", '"': """, "'": "'" }[c];
+                });
+            }
+
+            function fetchJSON(url) {
+                var ctrl = new AbortController();
+                var timer = setTimeout(function () { ctrl.abort(); }, 7000);
+                return fetch(url, { signal: ctrl.signal }).then(function (r) {
+                    clearTimeout(timer);
+                    if (!r.ok) throw new Error(r.status);
+                    return r.json();
+                });
+            }
+
+            // LEETCODE STATS
+            fetchJSON("https://leetcode-api-faisalshohag.vercel.app/" + LEETCODE_USER)
+                .then(function (d) {
+                    setNum("lc-total",  d.totalSolved);
+                    setNum("lc-easy",   d.easySolved);
+                    setNum("lc-medium", d.mediumSolved);
+                    setNum("lc-hard",   d.hardSolved);
+                })
+                .catch(function () {
+                    fetchJSON("https://alfa-leetcode-api.onrender.com/" + LEETCODE_USER + "/solved")
+                        .then(function (d) {
+                            setNum("lc-total",  d.solvedProblem);
+                            setNum("lc-easy",   d.easySolved);
+                            setNum("lc-medium", d.mediumSolved);
+                            setNum("lc-hard",   d.hardSolved);
+                        })
+                        .catch(function () {});
+                });
+
+            // GITHUB STATS
+            fetchJSON("https://api.github.com/users/" + GITHUB_USER)
+                .then(function (d) {
+                    setNum("gh-repos",     d.public_repos);
+                    setNum("gh-followers", d.followers);
+                    setNum("gh-following", d.following);
+                })
+                .catch(function () {});
+
+            fetchJSON("https://github-contributions-api.jogruber.de/v4/" + GITHUB_USER + "?y=last")
+                .then(function (d) {
+                    var total = d && d.total ? (d.total.lastYear || Object.values(d.total)[0]) : null;
+                    setNum("gh-contrib", total);
+                })
+                .catch(function () {});
+
+            // THEME TOGGLE
+            var themeBtn = document.getElementById("theme-btn");
+            if (themeBtn) {
+                themeBtn.addEventListener("click", function () {
+                    var next = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+                    document.documentElement.setAttribute("data-theme", next);
+                    try { localStorage.setItem("theme", next); } catch (e) {}
+                });
+            }
+        })();
+    </script>
 </body>
 </html>
