@@ -1,0 +1,9 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300">
+<defs><linearGradient id="bg"><stop stop-color="#101827"/><stop offset="1" stop-color="#182d46"/></linearGradient><linearGradient id="a"><stop stop-color="#55d6be"/><stop offset="1" stop-color="#7aa7ff"/></linearGradient></defs>
+<rect width="1200" height="300" rx="24" fill="url(#bg)"/><circle cx="1030" cy="40" r="190" fill="#55d6be" opacity=".08"/>
+<path d="M60 225H1140" stroke="#39506b"/>
+<text x="72" y="115" fill="#f4f7fb" font-family="Arial" font-size="58" font-weight="700">CHERA WONDIMU</text>
+<text x="76" y="163" fill="url(#a)" font-family="Arial" font-size="25" font-weight="700">SOFTWARE ENGINEERING STUDENT</text>
+<text x="76" y="203" fill="#c3d0df" font-family="Arial" font-size="20">Backend-focused Full-Stack Developer · Problem Solver</text>
+<text x="76" y="260" fill="#8ea4bd" font-family="monospace" font-size="15">BUILD • LEARN • SOLVE • DEPLOY</text>
+<text x="1085" y="170" text-anchor="middle" fill="#55d6be" font-family="monospace" font-size="54">&lt;/&gt;</text></svg>
