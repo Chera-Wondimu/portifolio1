@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="230" viewBox="0 0 1100 230">
-<rect x="1" y="1" width="1098" height="228" rx="18" fill="#101629" stroke="#8b7bce" stroke-opacity=".5"/>
-<text x="34" y="43" fill="#70e1c1" font-family="Consolas,monospace" font-size="17">$ cat about_chera.txt</text>
-<text x="34" y="86" fill="#e8e6ff" font-family="Segoe UI,Arial" font-size="20" font-weight="600">Software Engineering student at ASTU, Ethiopia.</text>
-<text x="34" y="122" fill="#c8c4df" font-family="Segoe UI,Arial" font-size="17">I build backend-focused web applications, explore full-stack engineering,</text>
-<text x="34" y="151" fill="#c8c4df" font-family="Segoe UI,Arial" font-size="17">and strengthen my problem-solving skills through algorithms and competitive programming.</text>
-<text x="34" y="194" fill="#8ed8ff" font-family="Consolas,monospace" font-size="15">FOCUS: Backend · Full-Stack · DSA · Data Science · AI</text>
-</svg>

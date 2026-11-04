@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="210" height="52" viewBox="0 0 210 52">
-<rect x="1" y="1" width="208" height="50" rx="12" fill="#151b30" stroke="#fbbf24" stroke-opacity=".8"/>
-<circle cx="23" cy="26" r="5" fill="#fbbf24"/>
-<text x="111" y="32" fill="#f0edff" font-family="Consolas,monospace" font-size="15" font-weight="700" text-anchor="middle">LEETCODE</text>
-</svg>

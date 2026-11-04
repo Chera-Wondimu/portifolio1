@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="66" viewBox="0 0 1100 66">
-<rect x="1" y="1" width="1098" height="64" rx="12" fill="#11172a" stroke="#8171c8" stroke-opacity=".55"/>
-<rect x="1" y="1" width="7" height="64" rx="3" fill="#a78bfa"/>
-<text x="30" y="42" fill="#e9e5ff" font-family="Consolas,monospace" font-size="23" font-weight="700">05  /  GITHUB PULSE</text>
-<path d="M790 33h260" stroke="#8b83b8" stroke-opacity=".45" stroke-dasharray="5 8"/>
-<circle cx="1065" cy="33" r="5" fill="#70e1c1"/>
-</svg>
