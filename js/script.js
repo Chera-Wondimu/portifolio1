@@ -200,12 +200,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // 7. Shared Statistics Helpers
-    const REFRESH_INTERVAL = 5 * 60 * 1000;
+    const LEETCODE_REFRESH_INTERVAL = 30 * 1000;
+    const CODEFORCES_REFRESH_INTERVAL = 5 * 60 * 1000;
+
+    let leetcodeLoading = false;
+    let codeforcesLoading = false;
 
     function getTimeLabel() {
         return new Date().toLocaleTimeString([], {
             hour: "2-digit",
-            minute: "2-digit"
+            minute: "2-digit",
+            second: "2-digit"
         });
     }
 
@@ -234,55 +239,61 @@ document.addEventListener("DOMContentLoaded", () => {
         const mediumBar = document.getElementById("medium-bar");
         const hardBar = document.getElementById("hard-bar");
 
-        if (!totalElement) return;
+        if (!totalElement || leetcodeLoading) return;
+
+        leetcodeLoading = true;
 
         const username = "Chera_Wondimu";
 
         const endpoint =
             `https://leetcode-stats-api.herokuapp.com/${encodeURIComponent(username)}`;
 
-        if (statusElement) {
-            statusElement.textContent = "Loading LeetCode statistics...";
-        }
-
         try {
             const data = await fetchJSON(endpoint);
 
             if (
                 data.status !== "success" ||
-                typeof data.totalSolved !== "number"
+                !Number.isFinite(Number(data.totalSolved)) ||
+                !Number.isFinite(Number(data.easySolved)) ||
+                !Number.isFinite(Number(data.mediumSolved)) ||
+                !Number.isFinite(Number(data.hardSolved))
             ) {
                 throw new Error("Invalid LeetCode response.");
             }
 
-            const easy = Number(data.easySolved) || 0;
-            const medium = Number(data.mediumSolved) || 0;
-            const hard = Number(data.hardSolved) || 0;
-            const total = Number(data.totalSolved) || 0;
+            const total = Number(data.totalSolved);
+            const easy = Number(data.easySolved);
+            const medium = Number(data.mediumSolved);
+            const hard = Number(data.hardSolved);
 
+            // Update all statistics
             totalElement.textContent = total;
 
             if (easyElement) easyElement.textContent = easy;
             if (mediumElement) mediumElement.textContent = medium;
             if (hardElement) hardElement.textContent = hard;
 
-            const denominator = easy + medium + hard || 1;
+            // Recalculate progress bars
+            const denominator = total || 1;
 
             if (easyBar) {
-                easyBar.style.width = `${(easy / denominator) * 100}%`;
+                easyBar.style.width =
+                    `${(easy / denominator) * 100}%`;
             }
 
             if (mediumBar) {
-                mediumBar.style.width = `${(medium / denominator) * 100}%`;
+                mediumBar.style.width =
+                    `${(medium / denominator) * 100}%`;
             }
 
             if (hardBar) {
-                hardBar.style.width = `${(hard / denominator) * 100}%`;
+                hardBar.style.width =
+                    `${(hard / denominator) * 100}%`;
             }
 
             if (statusElement) {
                 statusElement.textContent =
-                    `Live statistics updated at ${getTimeLabel()}`;
+                    `✓ Live statistics updated at ${getTimeLabel()}`;
             }
 
         } catch (error) {
@@ -290,8 +301,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (statusElement) {
                 statusElement.textContent =
-                    "LeetCode statistics temporarily unavailable.";
+                    "Unable to refresh LeetCode statistics. Showing last available data.";
             }
+
+        } finally {
+            leetcodeLoading = false;
         }
     }
 
@@ -303,7 +317,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const rankElement = document.getElementById("cf-rank");
         const statusElement = document.getElementById("codeforces-status");
 
-        if (!ratingElement && !solvedElement) return;
+        if ((!ratingElement && !solvedElement) || codeforcesLoading) return;
+
+        codeforcesLoading = true;
 
         const username = "chera.wondimu17";
 
@@ -313,12 +329,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const submissionsEndpoint =
             `https://codeforces.com/api/user.status?handle=${encodeURIComponent(username)}`;
 
-        if (statusElement) {
-            statusElement.textContent = "Loading Codeforces statistics...";
-        }
-
         try {
-            // Fetch profile and submissions
             const [profileData, submissionsData] = await Promise.all([
                 fetchJSON(userEndpoint),
                 fetchJSON(submissionsEndpoint)
@@ -340,8 +351,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             const user = profileData.result[0];
-
-            // Count unique problems with an accepted submission
             const solvedProblems = new Set();
 
             submissionsData.result.forEach((submission) => {
@@ -351,10 +360,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     submission.problem.contestId !== undefined &&
                     submission.problem.index
                 ) {
-                    const problemKey =
-                        `${submission.problem.contestId}-${submission.problem.index}`;
-
-                    solvedProblems.add(problemKey);
+                    solvedProblems.add(
+                        `${submission.problem.contestId}-${submission.problem.index}`
+                    );
                 }
             });
 
@@ -392,18 +400,40 @@ document.addEventListener("DOMContentLoaded", () => {
                 statusElement.textContent =
                     "Codeforces statistics temporarily unavailable.";
             }
+
+        } finally {
+            codeforcesLoading = false;
         }
     }
 
-    // 10. Initialize and Automatically Refresh Statistics
-    async function refreshStatistics() {
-        await Promise.all([
-            loadLeetCodeStats(),
-            loadCodeforcesStats()
-        ]);
-    }
+    // 10. Initialize Statistics
+    loadLeetCodeStats();
+    loadCodeforcesStats();
 
-    refreshStatistics();
+    // LeetCode checks every 30 seconds
+    setInterval(() => {
+        if (!document.hidden) {
+            loadLeetCodeStats();
+        }
+    }, LEETCODE_REFRESH_INTERVAL);
 
-    setInterval(refreshStatistics, REFRESH_INTERVAL);
+    // Codeforces checks every 5 minutes
+    setInterval(() => {
+        if (!document.hidden) {
+            loadCodeforcesStats();
+        }
+    }, CODEFORCES_REFRESH_INTERVAL);
+
+    // 11. Refresh when returning to the portfolio
+    document.addEventListener("visibilitychange", () => {
+        if (!document.hidden) {
+            loadLeetCodeStats();
+            loadCodeforcesStats();
+        }
+    });
+
+    window.addEventListener("focus", () => {
+        loadLeetCodeStats();
+        loadCodeforcesStats();
+    });
 });
